@@ -5,8 +5,6 @@ from app.forms import ReportForm
 
 # Se muestra la información de la tabla completa en la vista principal.
 def index(request):
-    print('********************esto es una prueba*****************************')
-    print(id)
     # Obtener todo el objeto
     read = MonitoringReports.objects.all()
     return render(request, 'index.html', {'read_data': read})
@@ -27,7 +25,6 @@ def createReport(request):
 # Sobre un registro ya creado, elimina los valores deseados
 def editReport(request, id):
     report = MonitoringReports.objects.get(id = id)
-    
     if request.method == 'GET':
         edit_form = ReportForm(instance = report)
     else:
@@ -35,7 +32,7 @@ def editReport(request, id):
         if edit_form.is_valid():
             edit_form.save()
         return redirect('index')  # redigirir a la página principal
-    return render(request, 'create_form.html', {'edit_form': edit_form})
+    return render(request, 'create_form.html', {'edit_form': report})
 
 
 # Elimina un registro
@@ -45,5 +42,3 @@ def deleteReport(request,id):
         report.delete()
         return redirect('index')  # redigirir a la página principal
     return render(request,'delete_form.html', {'delete_form': report})
-
-

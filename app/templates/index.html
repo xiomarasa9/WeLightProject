@@ -39,7 +39,6 @@
                         <th scope="col" style="text-align: center;">Intensity</th>
                         <th scope="col" style="text-align: center;">Power factor</th>
                         <th scope="col" style="text-align: center;">Actions</th>
-
                     </tr>
                 </thead>
                 {% for element in read_data %}
@@ -56,16 +55,13 @@
                         <td style="text-align: center;">{{ element.intensity }}</td style="text-align: center;">
                         <td style="text-align: center;">{{ element.power_factor }}</td style="text-align: center;">
                         <td>
-
-                            <a href="{% url 'edit_form' id=element.id %}" class="btn btn-warning">Edit</a>
-                            <a href="{% url 'delete_form' id=element.id %}" class="btn btn-danger">Delete</a>
-
+                            <a href="#" class="btn btn-warning">Edit</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 </tbody>
                 {% endfor %}
             </table>
-
         </div>
     </div>
 </body>
