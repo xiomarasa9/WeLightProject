@@ -13,14 +13,12 @@
 
 <h1 style="margin: 10px;"> Are you sure you want to delete the record? </h1>
 
-<!-- Sin probar -->
-
 <body>
     <form action="" method="post">
         <div style="padding: 50px;">
             {% csrf_token %}
-            <button class="btn btn-success" type="submit">Delete</button>
-            <button class="btn btn-success" type="submit"><a href="{% url 'index' %}">Cancel</a></button>
+            <button class="btn btn-danger" type="submit">Delete</button>
+            <a href="{% url 'index' %}" button class="btn btn-secondary" type="submit">Cancel</a>
         </div>
     </form>
 </body>

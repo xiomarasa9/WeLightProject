@@ -32,7 +32,7 @@ def editReport(request, id):
         if edit_form.is_valid():
             edit_form.save()
         return redirect('index')  # redigirir a la página principal
-    return render(request, 'edit_form.html', {'edit_form': report})
+    return render(request, 'create_form.html', {'edit_form': report})
 
 
 # Elimina un registro
