@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Create a record</title>
+    {# Cargamos la librería #} {% load bootstrap4 %} {# CSS Bootstrap #} {% bootstrap_css %}
+</head>
+<h1 style="margin: 10px;"> Record creation form </h1>
+
+<body>
+    <form action="{% url 'listado_app:edit_form' id=edit_form.instance.id  %}" method="post">
+        <div style="padding: 30px;">
+            {% csrf_token %} {{ edit_form.as_p }}
+            <button class="btn btn-success" type="submit">Save</button>
+        </div>
+    </form>
+</body>
